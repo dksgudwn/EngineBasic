@@ -10,7 +10,7 @@ public class Meteorite : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerHP>().TakeDamge(damage);
+            collision.GetComponent<PlayerHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

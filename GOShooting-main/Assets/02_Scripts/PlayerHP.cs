@@ -8,6 +8,17 @@ public class PlayerHP : MonoBehaviour
     float currentHP;
     SpriteRenderer spriteRenderer;
 
+    public float MaxHP {
+        get
+        {
+             return maxHP;
+        }
+    }
+    public float CurrentHp{
+        get{
+            return currentHP;
+        }
+    }
 
     void Start()
     {
@@ -16,8 +27,10 @@ public class PlayerHP : MonoBehaviour
     }
 
 
-    public void TakeDamge(float damage)
+    public void TakeDamage(float damage)
     {
+        currentHP -= damage;
+
         StopCoroutine("HitColorAnimation");
         StartCoroutine("HitColorAnimation");
     }

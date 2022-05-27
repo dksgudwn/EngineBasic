@@ -5,13 +5,27 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float damage = 1;
+    [SerializeField] int scorePoint = 100;
+    PlayerController playerController;
+    private void Awake()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+        // playerController = GameObject.Find("Player").GetComponent<PlayerController>(); 게임오브젝트 이름으로 찾기
+        // playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); 테그로 찾기 
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerHP>().TakeDamge(damage);
-            Destroy(gameObject);
+            collision.GetComponent<PlayerHP>().TakeDamage(damage);
+            Die();
         }
+    }
+    public void Die()
+    {
+        playerController.Score += scorePoint;
+        Debug.Log(playerController.Score);
+        Destroy(gameObject);
     }
 }
