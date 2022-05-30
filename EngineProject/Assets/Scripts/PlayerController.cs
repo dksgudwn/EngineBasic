@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-
-        movement2D.MoveTo(new Vector3(x,y,0));
+        Vector3 dir = new Vector3(x,y,0);
+        transform.position = dir * Time.deltaTime * speed;
     }
 }
