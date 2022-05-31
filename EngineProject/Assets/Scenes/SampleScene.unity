@@ -263,7 +263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: -467307283419413426, guid: 66f752a78ad66654884f2b38c0adca92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -301,62 +301,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff03cf4fc7263f4295f332ad04396c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   bulletPrefab: {fileID: 8803729229459317908, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
---- !u!1001 &8803729231242760465
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8803729229459317908, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_Name
-      value: Bullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803729229459317913, guid: d393bd817f6595d499aa267e807c9b18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d393bd817f6595d499aa267e807c9b18, type: 3}

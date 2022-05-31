@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     
     Movement movement;
     Weapon weapon;
+    bool isDie = false;
+    Animator animator;
 
     int score;
     public int Score
@@ -32,11 +35,13 @@ public class PlayerController : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         weapon = GetComponent<Weapon>();
+        animator = GetComponent<Animator>();
     }
 
 
     void Update()
     {
+        if(isDie ==true) return;
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -44,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(keyCodeAttack))
         {
-            weapon.StartFriring();
+            weapon.StartFiring();
         }
         else if (Input.GetKeyUp(keyCodeAttack))
         {
@@ -54,7 +59,20 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
-                                         Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y), 0);
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
+            Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y), 0);
+    }
+    public void Die()
+    {
+        movement.MoveTo(Vector2.zero);
+        animator.SetTrigger("onDie");
+        Destroy(GetComponent<CircleCollider2D>());
+        isDie = true;
+    }
+    public void OnDieEvent()
+    {
+        PlayerPrefs.SetInt("Score", score);
+        SceneManager.LoadScene("GameOver");
     }
 }

@@ -13,9 +13,10 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector3 position = new Vector3(x,y,0);
+        transform.position += position * speed * Time.deltaTime;
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bulletPrefab, position, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPrefab,transform.position,transform.rotation);
         }
     }
     private void FixedUpdate()

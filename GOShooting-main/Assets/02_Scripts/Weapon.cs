@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     float attackRate = 0.1f;
 
-    public void StartFriring()
+    public void StartFiring()
     {
         StartCoroutine("TryAttack");
     }

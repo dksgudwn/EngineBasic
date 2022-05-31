@@ -162,3 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  scorePoint: 100
+  exPrefab: {fileID: 1811444276806583310, guid: 3366bf875eedc9f43a681cec0e7a7d6e, type: 3}
