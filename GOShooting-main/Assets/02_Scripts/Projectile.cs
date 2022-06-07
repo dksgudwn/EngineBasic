@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    Pooling bulletPooling;
+    private void Start()
+    {
+        bulletPooling = GameObject.Find("Player").GetComponent<Pooling>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
             //Destroy(collision.gameObject);
             collision.GetComponent<Enemy>().Die();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            bulletPooling.ReturnObject(gameObject);
         }
     }
 

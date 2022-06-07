@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Meteorite
   - Playerbullet
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,15 @@ public class Weapon : MonoBehaviour
     GameObject projectilePrefabs;
     [SerializeField]
     float attackRate = 0.1f;
-
+    Pooling bulletPooling;
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    private void Start()
+    {
+        bulletPooling = GetComponent<Pooling>();
+    }
     public void StartFiring()
     {
         StartCoroutine("TryAttack");
@@ -23,7 +31,8 @@ public class Weapon : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(projectilePrefabs, transform.position, Quaternion.identity);
+            //Instantiate(projectilePrefabs, transform.position, Quaternion.identity);
+            bulletPooling.SpawnObject(transform.position, Quaternion.identity);
             yield return new WaitForSeconds(attackRate);
         }
     }

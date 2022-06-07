@@ -8,8 +8,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] int scorePoint = 100;
     PlayerController playerController;
     [SerializeField] GameObject exPrefab;
+    Pooling enemyPooler;
     private void Awake()
     {
+        enemyPooler = GameObject.Find("EnemySpawner").GetComponent<Pooling>();
         playerController = FindObjectOfType<PlayerController>();
         // playerController = GameObject.Find("Player").GetComponent<PlayerController>(); 게임오브젝트 이름으로 찾기
         // playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); 테그로 찾기 
@@ -28,6 +30,7 @@ public class Enemy : MonoBehaviour
         playerController.Score += scorePoint;
         Debug.Log(playerController.Score);
         GameObject clone = Instantiate(exPrefab, transform.position, Quaternion.identity);
+        enemyPooler.ReturnObject(gameObject);
         Destroy(gameObject);
         Destroy(clone,1f);
         
