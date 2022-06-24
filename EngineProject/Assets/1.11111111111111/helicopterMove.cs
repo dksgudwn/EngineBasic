@@ -20,7 +20,7 @@ public class helicopterMove : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         Vector3 d = new Vector3(x,y,0);
         transform.position += d * speed * Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
             StartFiring();
         }
