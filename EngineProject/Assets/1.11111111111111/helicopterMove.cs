@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class helicopterMove : MonoBehaviour
 {
+    [SerializeField] stageData stageData;
     [SerializeField] float speed;
     [SerializeField] GameObject water;
-    [SerializeField] float spawnTime;
-    // Start is called before the first frame update
+    [SerializeField] GameObject fire;
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -22,25 +21,27 @@ public class helicopterMove : MonoBehaviour
         transform.position += d * speed * Time.deltaTime;
         if(Input.GetKey(KeyCode.Space))
         {
-            StartFiring();
+            StartCoroutine("Water");
         }
         else //(Input.GetKeyUp(KeyCode.Space))
         {
-            StopFiring();
+            StopCoroutine("Water");
         }
+    }
+    private void LateUpdate()
+    {
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
+        Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
     }
     IEnumerator Water()
     {
         Instantiate(water, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(spawnTime);
+        yield return null;
     }
-    void StartFiring()
+    private IEnumerator HitColorAnimation()
     {
-        StartCoroutine("Water");
-    }
-
-    void StopFiring()
-    {
-        StopCoroutine("Water");
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
     }
 }

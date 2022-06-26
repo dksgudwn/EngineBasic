@@ -39,12 +39,15 @@
      <Compile Include="Assets\02_Scripts\Spawner.cs" />
      <Compile Include="Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\1.11111111111111\helicopterMove.cs" />
      <Compile Include="Assets\BackgroundAssets\Demo\Script\ParallaxBackground_0.cs" />
      <Compile Include="Assets\02_Scripts\MoveTo.cs" />
      <Compile Include="Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\02_Scripts\BoomDZ.cs" />
      <Compile Include="Assets\02_Scripts\BGMove.cs" />
      <Compile Include="Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\dd.cs" />
+     <Compile Include="Assets\1.11111111111111\Timer.cs" />
      <Compile Include="Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
@@ -57,8 +60,8 @@
      <Compile Include="Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets\02_Scripts\boomMove.cs" />
      <Compile Include="Assets\02_Scripts\stageData.cs" />
-     <Compile Include="Assets\1.11111111111111\helicopterMove.cs" />
      <Compile Include="Assets\1.11111111111111\water.cs" />
+     <Compile Include="Assets\1.11111111111111\townHP.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

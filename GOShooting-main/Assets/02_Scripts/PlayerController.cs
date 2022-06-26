@@ -7,8 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] 
     KeyCode keyCodeAttack = KeyCode.Space;
-    [SerializeField] 
-    StageData stageData;
+    [SerializeField] StageData stageData;
     
     Movement movement;
     Weapon weapon;
