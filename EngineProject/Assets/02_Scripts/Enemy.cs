@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] int maxHp = 4;
     private int currentHp;
     private SpriteRenderer spriteRenderer;
+
+    public UIManager uiManager;
     townHP _townHP;
      int a;
     void Start()
@@ -17,6 +19,7 @@ public class Enemy : MonoBehaviour
         currentHp = maxHp;
         spriteRenderer = GetComponent<SpriteRenderer>();
         _townHP = GetComponent<townHP>();
+        uiManager = FindObjectOfType<UIManager>();
     }
   
     public void TakeDamage(int damage)
@@ -38,7 +41,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         transform.position += dir * speed * Time.deltaTime;
-        Invoke("AutoDestroy", 5f);
+
         if(transform.position.x <= stageData.LimitMin.x)
         {
             GameObject.Find("EventSystem").GetComponent<townHP>().ddd--;
@@ -46,18 +49,16 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             //gameObject.SetActive(false);
         }
+
         if(GameObject.Find("EventSystem").GetComponent<townHP>().ddd<=0)
         {
             SceneManager.LoadScene("GameOver");   
         }
     }
     
-    private void AutoDestroy()
-    {
-        Destroy(gameObject);
-    }
     private void Die()
     {
+        uiManager.score += 100;
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D other)

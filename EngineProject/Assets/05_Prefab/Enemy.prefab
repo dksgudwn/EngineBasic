@@ -99,8 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: c4410636f904a7e40a012dd51f03bc78, type: 2}
   speed: 5
-  maxHp: 30
-  Vhp: 5
+  maxHp: 20
 --- !u!61 &-4546563935299386572
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118,7 +117,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 1.7066667, y: 1.7066667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

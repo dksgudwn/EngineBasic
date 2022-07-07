@@ -7,11 +7,13 @@ public class helicopterMove : MonoBehaviour
     [SerializeField] stageData stageData;
     [SerializeField] float speed;
     [SerializeField] GameObject water;
-    [SerializeField] GameObject fire;
     private SpriteRenderer spriteRenderer;
+
+    public PoolManager manager;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        manager = FindObjectOfType<PoolManager>();
     }
     void Update()
     {
@@ -35,7 +37,7 @@ public class helicopterMove : MonoBehaviour
     }
     IEnumerator Water()
     {
-        Instantiate(water, transform.position, Quaternion.identity);
+        manager.Pop();
         yield return null;
     }
     private IEnumerator HitColorAnimation()

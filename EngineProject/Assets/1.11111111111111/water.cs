@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class water : MonoBehaviour
+public class water : Pooled
 {
     [SerializeField] float speed;
     int damage = 1;

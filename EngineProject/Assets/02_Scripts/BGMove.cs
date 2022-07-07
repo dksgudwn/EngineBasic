@@ -14,7 +14,7 @@ public class BGMove : MonoBehaviour
     void Update()
     {
         transform.position += Time.deltaTime * speed * d;
-        if(transform.position.x <= -20)
+        if(transform.position.x <= -19.8f)
         {
             transform.position = new Vector3(20,0,0);
         }

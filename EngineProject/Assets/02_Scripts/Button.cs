@@ -29,5 +29,8 @@ public class Button : MonoBehaviour
         Debug.Log("버튼눌림");
         SceneManager.LoadScene(b);//여기요
     }
-    
+    public void ButtonExit()
+    {
+        Application.Quit();
+    }    
 }
